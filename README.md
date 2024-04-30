@@ -1,1 +1,3 @@
 # SQL-COVID-19-DATA-ANALYSIS
+
+This project is geared towards analyzing COVID-19 data through SQL to gain a comprehensive understanding of the pandemic's impact across regions and time periods. The primary objective is to examine various factors influencing the spread and severity of the virus, such as demographic information, healthcare infrastructure, government interventions, and public health measures. By delving into this data, we aim to identify trends, patterns, and correlations that can inform public health strategies, policy decisions, and resource allocation. The dataset utilized for this SQL analysis is sourced from reliable sources tracking COVID-19 cases, deaths, testing, and related metrics.
