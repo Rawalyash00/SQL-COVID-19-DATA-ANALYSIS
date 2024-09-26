@@ -1,4 +1,5 @@
 # SQL-COVID-19-DATA-ANALYSIS
+![covid](https://github.com/user-attachments/assets/9e978070-b0ca-4270-85c4-9aec0fbc669d)
 
 This project is geared towards analyzing COVID-19 data through SQL to gain a comprehensive understanding of the pandemic's impact across regions and time periods. The primary objective is to examine various factors influencing the spread and severity of the virus, such as demographic information, healthcare infrastructure, government interventions, and public health measures. By delving into this data, we aim to identify trends, patterns, and correlations that can inform public health strategies, policy decisions, and resource allocation. The dataset utilized for this SQL analysis is sourced from reliable sources tracking COVID-19 cases, deaths, testing, and related metrics.
 
@@ -147,18 +148,3 @@ Join PortfolioProject..CovidVaccinations vac
 Select *, (RollingPeopleVaccinated/Population)*100
 From #PercentPopulationVaccinated
 ```
-
-
-
--- Creating View to store data for later visualizations
-
-Create View PercentPopulationVaccinated as
-Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
-, SUM(CONVERT(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated
---, (RollingPeopleVaccinated/population)*100
-From PortfolioProject..CovidDeaths dea
-Join PortfolioProject..CovidVaccinations vac
-	On dea.location = vac.location
-	and dea.date = vac.date
-where dea.continent is not null 
-
